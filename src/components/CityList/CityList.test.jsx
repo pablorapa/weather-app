@@ -12,7 +12,7 @@ test('CityList render', async () => {
     const fnClickOnItem = jest.fn();
     const { findAllByRole } = render(<CityList cities={cities} onClickCity={fnClickOnItem}/>)
     
-    const cityAndCountryList = await findAllByRole('listitem');
+    const cityAndCountryList = await findAllByRole('button');
 
     expect(cityAndCountryList).toHaveLength(3);
 
@@ -23,7 +23,7 @@ test('CityList click on item', async () => {
 
     const { findAllByRole } = render(<CityList cities={cities} onClickCity={fnClickOnItem} />);
 
-    const items = await findAllByRole('listitem');
+    const items = await findAllByRole('button');
 
     fireEvent.click(items[0]);
 
